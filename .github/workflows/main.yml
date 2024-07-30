@@ -16,7 +16,7 @@ jobs:
 
     - name: Build for Android ${{matrix.arch}}
       run: |
-            sh 
+            sh virtio-venus-builder.sh
 
     - name: Upload
       uses: actions/upload-artifact@v1
