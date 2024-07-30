@@ -110,7 +110,7 @@ main() {
 	else
 		meson setup "build" \
 			--cross-file=$CROSSFILE \
-			-Dprefix=$PREFIX \
+			-Dprefix=/tmp/ \
 			-Dvulkan-drivers=virtio \
 			-Dgallium-drivers= \
 			-Dplatforms=x11,android \
@@ -122,7 +122,7 @@ main() {
 			-Dshared-llvm=disabled \
 			-Dperfetto=false \
 			-Dxmlconfig=disabled \
-			-Dbuildtype=debug
+			-Dbuildtype=release
 	fi
 		
 	ninja -C "build" install -j$(nproc)
@@ -142,7 +142,7 @@ main() {
 	else
 		meson setup "build" \
 			--cross-file=$CROSSFILE \
-			-Dprefix=$PREFIX \
+			-Dprefix=/tmp/ \
 			-Dplatforms=egl,glx \
 			-Dvenus=true \
 			-Dvideo=false \
