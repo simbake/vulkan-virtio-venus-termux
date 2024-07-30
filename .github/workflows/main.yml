@@ -1,0 +1,25 @@
+name: Android build
+
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        arch: [ "arm64" ]
+      fail-fast: false
+
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build for Android ${{matrix.arch}}
+      run: |
+            sh 
+
+    - name: Upload
+      uses: actions/upload-artifact@v1
+      with:
+        name: out-${{matrix.arch}}
+        path: /tmp/
