@@ -1,0 +1,24 @@
+name: Build Virtio-Venus
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Run the bash script
+      - name: Execute virtio-venus-builder script
+        run: |
+          chmod +x ./virtio-venus-builder.sh
+          ./virtio-venus-builder.sh
