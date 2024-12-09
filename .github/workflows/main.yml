@@ -10,6 +10,7 @@ jobs:
       fail-fast: false
 
     runs-on: ubuntu-latest
+    container: ghcr.io/ubuntu/aarch64
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
